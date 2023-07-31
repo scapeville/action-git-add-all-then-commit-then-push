@@ -9,7 +9,7 @@ inputs:
   name:
     description: Git name
     required: false
-    default: ${{ github.event }}
+    default: "${{ github.event }}"
   email:
     description: Git email
     required: false
