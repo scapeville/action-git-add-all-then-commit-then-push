@@ -9,11 +9,11 @@ inputs:
   name:
     description: Git name
     required: false
-    default: "${{ github.event }}"
+    default: foo
   email:
     description: Git email
     required: false
-    default: 'foo'
+    default: bar
   msg:
     description: commit message
     required: false
