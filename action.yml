@@ -8,15 +8,12 @@ branding:
 inputs:
   name:
     description: Git name
-    required: false
     default: foo
   email:
     description: Git email
-    required: false
     default: bar
   msg:
     description: commit message
-    required: false
     default: "Commited — $(date +'%Y %b %e, %l:%M %p')"
 
 runs:
