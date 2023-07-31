@@ -1,5 +1,8 @@
 GitHub action: `git add .` → `git commit` → `git push`
 
+
+## Usage
+
 ```yml
 jobs:
   ...:
