@@ -8,10 +8,10 @@ branding:
 inputs:
   name:
     description: Git name
-    default: foo
+    default: foo-bar-baz
   email:
     description: Git email
-    default: foo@bar
+    default: d509a20fde23a@cce9157b209ed23e9
   msg:
     description: commit message
     default: "Committed on $(date +'%Y %b %e, %l:%M %p')"
