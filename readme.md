@@ -1,0 +1,1 @@
+GitHub action: `git add .` → `git commit` → `git push`
