@@ -11,21 +11,18 @@ inputs:
     default: foo
   email:
     description: Git email
-    default: bar
+    default: foo@bar
   msg:
     description: commit message
-    default: "Commited — $(date +'%Y %b %e, %l:%M %p')"
+    default: "Committed on $(date +'%Y %b %e, %l:%M %p')"
 
 runs:
   using: 'composite'
   steps:      
     - shell: bash
       run: |
-        echo "${{ inputs.name }}"
-        echo "${{ inputs.email }}"
-        echo "${{ inputs.msg }}"
-        # git config user.name "${{ inputs.name }}"
-        # git config user.email "${{ inputs.email }}"
-        # git add .
-        # git commit -m "${{ inputs.msg }}"
-        # git push
+        git config user.name "${{ inputs.name }}"
+        git config user.email "${{ inputs.email }}"
+        git add .
+        git commit -m "${{ inputs.msg }}"
+        git push
