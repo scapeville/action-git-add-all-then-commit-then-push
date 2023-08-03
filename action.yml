@@ -20,11 +20,11 @@ runs:
   using: 'composite'
   steps:      
     - run: |
-        echo "DEBUG: github.event.release.tag_name: ${{ github.event.release.tag_name }}"
+        echo "INFO: version: 1.2.0"
         git config user.name "${{ inputs.name }}"
         git config user.email "${{ inputs.email }}"
         git add .
-        git commit -m '$MSG'
+        git commit -m "$MSG"
         git push
       shell: bash
       env:
