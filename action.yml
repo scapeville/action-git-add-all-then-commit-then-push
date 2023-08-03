@@ -1,4 +1,4 @@
-name: action git add commit push
+name: Action git add commit push
 description: "GitHub action: 'git add .', 'git commit', 'git push'"
 author: Nicholas Valentinus
 branding:
@@ -19,10 +19,13 @@ inputs:
 runs:
   using: 'composite'
   steps:      
-    - shell: bash
-      run: |
+    - run: |
+        echo "DEBUG: github.event.release.tag_name: ${{ github.event.release.tag_name }}"
         git config user.name "${{ inputs.name }}"
         git config user.email "${{ inputs.email }}"
         git add .
-        git commit -m "${{ inputs.msg }}"
+        git commit -m $MSG
         git push
+      shell: bash
+      env:
+        MSG: ${{ inputs.msg }}  # via env, just in case the message includes backtick (`) characters
