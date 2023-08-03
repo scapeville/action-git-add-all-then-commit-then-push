@@ -68,9 +68,9 @@ jobs:
     - run: ...
     - uses: scapeville/action-git-add-all-then-commit-then-push@v1
       with:
-        name: ${{ vars.GIT_NAME }}
-        email: ${{ vars.GIT_EMAIL }}
-        msg: foo
+        name: foo $(date +'%Y %b %e, %l:%M %p')
+        email: bar $(FOO BAR BAZ)
+        msg: baz
       env:
         GH_TOKEN: ${{ github.token }}
   ```
