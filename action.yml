@@ -14,18 +14,20 @@ inputs:
     default: d509a20fde23a@cce9157b209ed23e9
   msg:
     description: commit message
-    default: "Committed on $(date +'%Y %b %e, %l:%M %p')"
+    default: Committed by GitHub Actions.
 
 runs:
   using: 'composite'
-  steps:      
+  steps:
     - run: |
-        echo "INFO: version: 1.2.0"
+        echo "::group::Committing"
+        echo "INFO: version: v1.2.1"
         git config user.name "${{ inputs.name }}"
         git config user.email "${{ inputs.email }}"
         git add .
         git commit -m "$MSG"
         git push
+        echo "::endgroup::"
       shell: bash
       env:
-        MSG: ${{ inputs.msg }}  # via env, just in case the message includes backtick (`) characters
+        MSG: ${{ inputs.msg }}  # Using env, in case the message has backtick (`) characters.
